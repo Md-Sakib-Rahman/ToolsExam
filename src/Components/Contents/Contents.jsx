@@ -5,18 +5,22 @@ import Icon from '../../assets/Icon.png'
 const Contents = ({typeCategory, isSortClicked}) => {
     const [url, setUrl] = useState('https://openapi.programming-hero.com/api/videos/category/1000')
     const [contents, setContents] = useState([])
-
+    const getCategoryUrl = (category) => {
+        switch (category) {
+          case 'Music':
+            return 'https://openapi.programming-hero.com/api/videos/category/1001';
+          case 'Comedy':
+            return 'https://openapi.programming-hero.com/api/videos/category/1003';
+          case 'Drawing':
+            return 'https://openapi.programming-hero.com/api/videos/category/1005';
+          case 'All':
+          default:
+            return 'https://openapi.programming-hero.com/api/videos/category/1000';
+        }
+      };
     useEffect(() => {
         
-            if(typeCategory=='All'){
-                setUrl("https://openapi.programming-hero.com/api/videos/category/1000")
-            }else if(typeCategory=='Music'){
-                setUrl("https://openapi.programming-hero.com/api/videos/category/1001")
-            }else if(typeCategory=='Comedy'){
-                setUrl("https://openapi.programming-hero.com/api/videos/category/1003")
-            }else if(typeCategory=='Drawing'){
-                setUrl("https://openapi.programming-hero.com/api/videos/category/1005")
-            }
+        const url = getCategoryUrl(typeCategory);
         
         
         fetch(url)

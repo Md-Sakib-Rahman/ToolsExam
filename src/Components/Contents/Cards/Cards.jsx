@@ -5,7 +5,7 @@ const Cards = ({content}) => {
     const { thumbnail, title, authors, others } = content;
   return (
     <>
-        <div className='flex flex-col justify-center items-center  w-[312px] h-[320px] p-2 gap-10 mt-10'>
+        <div className='flex flex-col justify-center items-center  w-[312px] h-[320px] p-2 gap-10 mt-10 max-lg:mx-auto'>
             <div className=' w-[300px] items-center'><img className='w-[312px] h-[200px] object-fill mx-auto rounded-xl' src={thumbnail} alt="" /></div>
             <div className='self-start gap-4 flex flex-col'>
                     <div className='flex gap-4'>
