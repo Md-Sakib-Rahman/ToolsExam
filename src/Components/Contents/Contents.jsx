@@ -2,20 +2,23 @@ import React, { useEffect, useState } from 'react'
 import Cards from './Cards/Cards'
 import Icon from '../../assets/Icon.png'
 
-const Contents = ({typeCategory}) => {
+const Contents = ({typeCategory, isSortClicked}) => {
     const [url, setUrl] = useState('https://openapi.programming-hero.com/api/videos/category/1000')
     const [contents, setContents] = useState([])
 
     useEffect(() => {
-        if(typeCategory=='All'){
-            setUrl("https://openapi.programming-hero.com/api/videos/category/1000")
-        }else if(typeCategory=='Music'){
-            setUrl("https://openapi.programming-hero.com/api/videos/category/1001")
-        }else if(typeCategory=='Comedy'){
-            setUrl("https://openapi.programming-hero.com/api/videos/category/1003")
-        }else if(typeCategory=='Drawing'){
-            setUrl("https://openapi.programming-hero.com/api/videos/category/1005")
-        }
+        
+            if(typeCategory=='All'){
+                setUrl("https://openapi.programming-hero.com/api/videos/category/1000")
+            }else if(typeCategory=='Music'){
+                setUrl("https://openapi.programming-hero.com/api/videos/category/1001")
+            }else if(typeCategory=='Comedy'){
+                setUrl("https://openapi.programming-hero.com/api/videos/category/1003")
+            }else if(typeCategory=='Drawing'){
+                setUrl("https://openapi.programming-hero.com/api/videos/category/1005")
+            }
+        
+        
         fetch(url)
             .then(res => res.json())
             .then(res => {setContents(res.data)

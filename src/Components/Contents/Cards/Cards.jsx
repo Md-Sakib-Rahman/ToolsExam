@@ -13,8 +13,8 @@ const Cards = ({content}) => {
                     <h1>{title}</h1>
                     </div>
                     <div>
-                        <h2></h2>
-                        <h2>100k Views</h2>
+                        <h2>{authors[0].profile_name}</h2>
+                        <h2>{others.views}</h2>
                     </div>
             </div>
         </div>
